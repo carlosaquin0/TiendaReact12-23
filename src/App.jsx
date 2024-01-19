@@ -9,6 +9,7 @@ function App() {
     <NavBar/>
     <ItemListContainer greeting={Bienvenidos}/>
     <ItemCount initial={1} stock={15} onAdd={(quantify) => console.log('Cantidad agregada', quantify)}/>
+    <itemDetailContainer />
     </div>
   
   )
