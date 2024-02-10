@@ -3,8 +3,11 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import itemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import ItemCount from './components/ItemCount/ItemCount'
 import { Route } from 'react-router-dom'
+import { CartProvider } from './context/cartContext'
+import CartView from './components/CartView/CartView'
+import Checkout from './components/CheckOut/checkout'
 
-import { CartProvider } from './context/cartContext';
+import { CartProvider } from './context/cartContext'
 
 function App() {
   
@@ -19,8 +22,9 @@ function App() {
     <Routes>
       <Route path='/' element={<ItemListContainer/>}/>
       <Route path='/category/:categoryId' element={<ItemListContainer/>} />
-      <Route path='item/itemId' element={<itemDetailContainer/>}/>
-      <Route path='/cart' element={<Cart/>} />
+      <Route path='/item/:itemId' element={<itemDetailContainer/>}/>
+      <Route path='/cart' element={<CartView/>} />
+      <Route path='/checkout' element={Checkout} />
       <Route path='*' element={<h1>404 NOT FOUND</h1>} />
     </Routes>
     </CartProvider>

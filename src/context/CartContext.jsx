@@ -23,6 +23,29 @@ const removeItem = (itemId) => {
     setCart(cartUpdated)
 }
 
+const getTotalQuantity = ()=> {
+    let accu=0
+    cart.forEach(prod =>{
+        accu += prod.quantity
+    })
+    
+    return accu
+}
+
+const totalQuantity =getTotalQuantity()
+
+const getTotal = ()=>{
+  let accu=0
+
+  cart.forEach(prod=>{
+    accu += prod.quantity * prod.price
+  })
+
+  return accu
+}
+
+const total = getTotal()
+
 const clearCart = () => {
     setCart([])
 }
